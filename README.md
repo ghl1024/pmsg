@@ -35,6 +35,7 @@
 * Linux
 * macOS
 * FreeBSD
+* OpenBSD
 
 ## 文档
 
@@ -83,23 +84,6 @@ https://github.com/lenye/pmsg/tree/main/docs
 1. 开始运行它
    ```shell
    $ docker run --rm ghcr.io/lenye/pmsg --help
-   
-   Usage:
-     pmsg [command]
-   
-   Available Commands:
-     dingtalk    ding talk
-     feishu      fei shu
-     help        Help about any command
-     slack       slack   
-     weixin      weixin
-     workweixin  work weixin
-   
-   Flags:
-     -h, --help      help for pmsg
-     -v, --version   version for pmsg
-   
-   Use "pmsg [command] --help" for more information about a command.
    ```
 
 ### 源代码
@@ -110,4 +94,12 @@ $ git clone https://github.com/lenye/pmsg.git
 
 ## License
 
-`pmsg` is released under the [Apache 2.0 license](https://github.com/lenye/pmsg/blob/main/LICENSE). 
+`pmsg` is released under the [Apache 2.0 license](https://github.com/lenye/pmsg/blob/main/LICENSE).
+
+## Links
+
+### Webhook 异步网关
+
+轻松管理、监控和测试你的 Web 事件，助力你掌控事件全流程
+
+https://dashboard.nanhook.com

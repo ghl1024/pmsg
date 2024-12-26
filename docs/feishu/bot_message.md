@@ -7,12 +7,14 @@ $ pmsg feishu bot -h
 
 -a, --user_agent string     http user agent
 
--t, --access_token string   飞书自定义机器人 access token (必填)
+-t, --access_token string   飞书自定义机器人 token (必填), 
+                             token 为 webhook 地址中 xxx 部分 https://open.feishu.cn/open-apis/bot/v2/hook/xxx
 -s, --secret string         签名密钥
 -m, --msg_type string       消息类型 (必填)，text(文本消息)、post(富文本)、image(图片)、
                                            share_chat(分享群名片)、interactive(消息卡片)
-                                           
-args                        参数：消息内容
+    --raw                   消息内容是原始字符串字面值，没有任何转义处理
+
+args                        参数：消息内容，默认是解释字符串，支持“\”转义
 ```
 
 消息内容
@@ -103,4 +105,4 @@ $ pmsg feishu bot -t access_token -m text 'HelloWorld'
 ok
 ```
 
-官方开发文档 [推送飞书自定义机器人消息](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)
+官方开发文档 [推送飞书自定义机器人消息](https://open.feishu.cn/document/client-docs/bot-v3/add-custom-bot)

@@ -1,4 +1,4 @@
-// Copyright 2022-2023 The pmsg Authors. All rights reserved.
+// Copyright 2022-2024 The pmsg Authors. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,25 +17,29 @@ package version
 import (
 	"fmt"
 	"runtime"
-	"time"
 )
 
 var (
-	Version   = "dev"                  // 版本
-	AppName   = "pmsg"                 // 名称
-	BuildTime = "2022-09-15T12:49:05Z" // 编译时间   $(date +%Y%m%d.%H%M%S)
-	BuildGit  = "git"                  // 版本号     $(git rev-parse HEAD)
-	StartTime = time.Now()
+	AppName     = "pmsg"    // 名称
+	Version     = "dev"     // 版本
+	BuildCommit = "none"    // git commit
+	BuildTime   = "unknown" // 编译时间
+
+	OpenSource = "https://github.com/lenye/pmsg" // 开发人
 )
 
 const versionTemplate = `%s
- Version:    %s
- Git commit: %s
- Built:      %s
- Go version: %s
- OS/Arch:    %s/%s
+  Version:     %s
+  Commit:      %s
+  Built:       %s
+  Go version:  %s
+  OS/Arch:     %s/%s
+  Open source: %s
 `
 
 func Print() string {
-	return fmt.Sprintf(versionTemplate, AppName, Version, BuildGit, BuildTime, runtime.Version(), runtime.GOOS, runtime.GOARCH)
+	return fmt.Sprintf(versionTemplate,
+		AppName, Version, BuildCommit, BuildTime,
+		runtime.Version(), runtime.GOOS, runtime.GOARCH,
+		OpenSource)
 }
